@@ -1,0 +1,123 @@
+<html>
+
+<head> 
+<title> Fligth Price Prediction </title>
+
+<style>
+
+form {
+
+text-align:center
+}
+
+input{
+width: 25%
+}
+
+input[type=submit] {
+  background-color: blue;
+  color: white;
+  width: 10%
+}
+
+select {
+width: 30%;
+}
+label {
+  font-size: 20px;
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}​
+
+
+</style>
+
+</head>
+
+<body>
+<center> <img src='static\pic.jpg' alt="flights", width="600" height="180"> </center>
+<center> <h1> Flight Price Prediction </h1> </center>
+
+<form action="{{ url_for('predict')}}" method="post">
+
+<lable for = "parlne" style="font-size: 17px"> Airline </label>
+<select id = "parlne" name="parlne">
+	<option value="0">Jet Airways</option>
+	<option value="1">IndiGo</option>
+	<option value="2">Air India</option>
+	<option value="3">Multiple Carriers</option>
+	<option value="4">SpiceJet</option>
+	<option value="5">Vistara</option>
+	<option value="6">Air Asia</option>
+	<option value="7">GoAir</option>
+	<option value="8">Multiple carriers Premium economy</option>
+	<option value="9">Jet Airways Business</option>
+	<option value="10">Vistara Premium economy</option>
+	<option value="11">Trujet</option>
+</select>
+
+<br> </br>
+
+<lable for = "psrc"> Source </lable>
+<select id = "psrc" name = "psrc">
+	<option value = "0"> Delhi </option>
+	<option value = "1"> Kolkata </option>
+	<option value = "2"> Banglore </option>
+	<option value = "3"> Mumbai </option>
+	<option value = "4"> Chennai </option>
+</select>
+
+<br> </br>
+
+<lable for = "pdest">Destination </lable>
+<select id = "pdest" name = "pdest">
+	<option value = "0">Cochin </option>
+	<option value = "1">Banglore </option>
+	<option value = "2">Delhi </option>
+	<option value = "3">New Delhi </option>
+	<option value = "4">Hyderabad </option>
+	<option value = "5">Kolkata </option>
+</select>
+
+<br> </br>
+
+<lable for = "pstp"> Total Stop </lable>
+<select id = "pstp" name = "pstp">
+	<option value = "0">Non-Stop </option>
+	<option value = "1">1 Stop </option>
+	<option value = "2">2 Stops</option>
+	<option value = "3">3 Stops </option>
+	<option value = "4">4 Stops </option>
+</select>
+
+<br> </br>
+
+<lable for ="Dep_Time">Departure Date</lable>
+<input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+
+<br> </br>
+
+<lable for ="Arrival_Time">Arrival Date</lable>
+<input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+
+<br> </br>
+
+
+<lable> </lable>
+<input id ="submit" type="submit" value="Predict"> </input>
+
+</form>
+
+<br>
+<br>
+
+<h2> {{ prediction_text }} </h2>
+
+<br>
+<br>
+
+<p> @2022 Pratik Badgujar </p>	
+</body>
+
+</html>
